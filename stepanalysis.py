@@ -7,20 +7,16 @@ register_matplotlib_converters()
 import matplotlib.dates as dates
 import datetime as dt
 
-#from scipy.interpolate import spline
-
-
 ### open file
 
-data=pd.read_csv('NoyolaAug19.csv')
+data=pd.read_csv('stepsdata.csv')
 
-### basic data
+### basic data description
 
 print(data.shape)
 print(data.columns)
 print(data.dtypes)
 print(data.head(8))
-
 
 ### transform timestamp and make steps integers
 
@@ -48,8 +44,8 @@ datesteps['Month'] = datesteps.index.month_name()
 datesteps['Weekday'] = datesteps.index.weekday_name
 
 #print(datesteps.shape)
-print(datesteps.head(8))
-print(datesteps.dtypes)
+#print(datesteps.head(8))
+#print(datesteps.dtypes)
 
 
 ### eliminate "low" days
@@ -311,5 +307,7 @@ ax2.annotate('2019', xy=(18000, 40), xytext=(18000, 35),**csfont)
 
 plt.show()
 
+fig.savefig("steps.pdf")
 fig.savefig("steps.jpg")
+
 

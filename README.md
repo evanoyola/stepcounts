@@ -7,3 +7,5 @@ The step log is created by date (not by time of day).
 Data for individual years is created by hand, not automatically.
 
 Plotting details are modified by hand for each individual user case.
+
+Examples for a few individuals are included
